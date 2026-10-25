@@ -16,6 +16,17 @@ Esta estrategia permite integrar cambios pequeños y frecuentes.
 Facilita la colaboración entre los desarrolladores.
 También ayuda a detectar errores mediante pruebas automatizadas.
 
+ ## Ventajas de GitFlow
+
+
+Organización: separa el desarrollo de nuevas funcionalidades del código estable.
+
+Control de versiones: facilita la preparación y publicación de nuevas versiones.
+
+Trabajo en equipo: permite que varios desarrolladores trabajen en funcionalidades diferentes.
+
+
+
 ## Cual usaria para una app web
 
 
