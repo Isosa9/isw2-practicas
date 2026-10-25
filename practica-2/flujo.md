@@ -9,8 +9,19 @@ El desarrollo basado en trunk- based emplea una rama principal común.
 Los programadores incorporan cambios pequeños con frecuencia.
 Esto hace más fácil la integración constante y disminuye las disputas entre ramas.
 
+
+## Ventajas de trunk-based development
+
+Esta estrategia permite integrar cambios pequeños y frecuentes.
+Facilita la colaboración entre los desarrolladores.
+También ayuda a detectar errores mediante pruebas automatizadas.
+
 ## Cual usaria para una app web
+
 
 Elegiría trunk-based development para una aplicación web
 porque facilita la integración frecuente de cambios
 y mejora la colaboración entre los desarrolladores.
+
+
+
