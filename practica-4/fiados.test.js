@@ -35,3 +35,21 @@ test('Calcula el 5% cuando hay días vencidos', () => {
 test('No cobra mora cuando no hay días vencidos', () => {
     assertEqual(calcularMora(1000, 0), 0);
 });
+
+
+
+test('Calcula mora para un monto de 500', () => {
+    assertEqual(calcularMora(500, 2), 25);
+});
+
+test('Permite un monto de cero', () => {
+    assertEqual(calcularMora(0, 5), 0);
+});
+
+test('Lanza error cuando el monto es negativo', () => {
+    assertThrows(() => calcularMora(-100, 5), RangeError);
+});
+
+test('Lanza error cuando los días no son un número', () => {
+    assertThrows(() => calcularMora(1000, 'cinco'), TypeError);
+});
