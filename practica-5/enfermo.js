@@ -1,4 +1,12 @@
 
+const DESCUENTO_MAYORISTA = 0.10;
+const DESCUENTO_FRECUENTE = 0.05;
+const DESCUENTO_CUPON = 0.05;
+const DESCUENTO_MEMBRESIA = 0.02;
+const TASA_ISV = 0.15;
+const LIMITE_ENVIO_GRATIS = 500;
+const COSTO_ENVIO = 50;
+
 
 function calcularVenta(precio, cantidad, tipoCliente, cupon, membresia, requiereEnvio) {
     if (precio <= 0 || cantidad <= 0) {
@@ -9,26 +17,26 @@ function calcularVenta(precio, cantidad, tipoCliente, cupon, membresia, requiere
     let descuento = 0;
 
     if (tipoCliente === "mayorista") {
-        descuento = subtotal * 0.10;
+        descuento = subtotal * DESCUENTO_MAYORISTA;
     } else if (tipoCliente === "frecuente") {
-        descuento = subtotal * 0.05;
+        descuento = subtotal * DESCUENTO_FRECUENTE;
     }
 
     if (cupon === true) {
-        descuento = descuento + subtotal * 0.05;
+        descuento = descuento + subtotal * DESCUENTO_CUPON;
     }
 
     if (membresia === true) {
-        descuento = descuento + subtotal * 0.02;
+        descuento = descuento + subtotal * DESCUENTO_MEMBRESIA;
     }
 
     let baseImponible = subtotal - descuento;
-    let impuesto = baseImponible * 0.15;
+    let impuesto = baseImponible * TASA_ISV;
     let costoEnvio = 0;
 
     if (requiereEnvio === true) {
-        if (baseImponible < 500) {
-            costoEnvio = 50;
+        if (baseImponible < LIMITE_ENVIO_GRATIS) {
+            costoEnvio = COSTO_ENVIO;
         } else {
             costoEnvio = 0;
         }
