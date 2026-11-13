@@ -34,13 +34,15 @@ function calcularVenta(precio, cantidad, tipoCliente, cupon, membresia, requiere
     let impuesto = baseImponible * TASA_ISV;
     let costoEnvio = 0;
 
-    if (requiereEnvio === true) {
-        if (baseImponible < LIMITE_ENVIO_GRATIS) {
-            costoEnvio = COSTO_ENVIO;
-        } else {
-            costoEnvio = 0;
-        }
-    }
+    if (!requiereEnvio) {
+    costoEnvio = 0;
+} else if (baseImponible >= LIMITE_ENVIO_GRATIS) {
+    costoEnvio = 0;
+} else {
+    costoEnvio = COSTO_ENVIO;
+         }
+
+    
 
     let total = baseImponible + impuesto + costoEnvio;
 
