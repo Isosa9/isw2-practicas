@@ -27,6 +27,16 @@ function calcularDescuento(subtotal, tipoCliente, cupon, membresia) {
     return descuento;
 }
 
+function calcularEnvio(baseImponible, requiereEnvio) {
+    if (!requiereEnvio) return 0;
+
+    if (baseImponible >= LIMITE_ENVIO_GRATIS) {
+        return 0;
+    }
+
+    return COSTO_ENVIO;
+}
+
 function calcularVenta(precio, cantidad, tipoCliente, cupon, membresia, requiereEnvio) {
     if (precio <= 0 || cantidad <= 0) {
         return { error: "Datos inválidos" };
@@ -43,15 +53,13 @@ const descuento = calcularDescuento(
 
     let baseImponible = subtotal - descuento;
     let impuesto = baseImponible * TASA_ISV;
-    let costoEnvio = 0;
+    
 
-    if (!requiereEnvio) {
-    costoEnvio = 0;
-} else if (baseImponible >= LIMITE_ENVIO_GRATIS) {
-    costoEnvio = 0;
-} else {
-    costoEnvio = COSTO_ENVIO;
-         }
+
+    const costoEnvio = calcularEnvio(
+    baseImponible,
+    requiereEnvio
+);
 
     
 
