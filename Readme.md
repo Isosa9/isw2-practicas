@@ -47,5 +47,5 @@ El archivo `practica-6/arquitectura.md` contiene:
 
 ## Autor
 
-Isis Yorleni Martinez LEARNE-CAP-FE054BF4
+Isis Yorleni Martinez LEARN-CAP-FE054BF4
 
